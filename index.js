@@ -59,8 +59,54 @@ app.get('/download-csv', (req, res) => {
 // Simple homepage with download link
 app.get('/', (req, res) => {
   res.send(`
-    <h1>Download Inquiries CSV</h1>
-    <a href="/download-csv" download>Download CSV</a>
+    <html>
+      <head>
+        <title>Download Inquiries CSV</title>
+        <style>
+          body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            color: #333;
+          }
+          .container {
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+          }
+          h1 {
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+          }
+          a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #0070f3;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+          }
+          a:hover {
+            background-color: #005bb5;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Download Inquiries CSV</h1>
+          <a href="/download-csv" download>Download CSV</a>
+        </div>
+      </body>
+    </html>
   `);
 });
 
