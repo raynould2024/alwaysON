@@ -58,6 +58,7 @@ app.get('/download-csv', (req, res) => {
 
 // Simple homepage with download link
 app.get('/', (req, res) => {
+res.setHeader('Content-Type', 'text/html');
   res.send(`
     <html>
       <head>
